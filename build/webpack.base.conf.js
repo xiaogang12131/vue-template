@@ -29,7 +29,7 @@ module.exports = {
       '@': resolve('src'),
       'common': resolve('src/common'),
       'components': resolve('src/components'),
-      'veiws': resolve('src/veiws'),
+      'views': resolve('src/views'),
       'http':resolve('src/http')
     }
   },

@@ -1,0 +1,13 @@
+{
+  "cityList":{
+    "options":[
+      {
+        "label": "江苏",
+        "cities": []
+      }, {
+        "label": "浙江",
+        "cities": []
+      }
+    ]
+  }
+}

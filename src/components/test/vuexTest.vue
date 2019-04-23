@@ -9,7 +9,7 @@
 <script>
   import {mapState,mapMutations,mapGetters,mapActions} from 'vuex'
   export default{
-    comonents:{},
+    components:{},
     data(){
       return{
         show:false
@@ -39,5 +39,10 @@
 </script>
 
 <style lang="stylus" scoped>
-
+  button
+    font-size:20px
+    &:hover
+      color:red
+      font-weight:bolder
+    
 </style>

@@ -16,3 +16,4 @@ let root = "http://114.215.130.190:8081";
  * export const test = function(){return axios.get(`${root}/api/getNewsList`)}
  *
  */
+export const cityList = function(){return axios.get("/cityList")}

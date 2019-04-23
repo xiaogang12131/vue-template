@@ -17,6 +17,9 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
 /* 引入element-ui */
 Vue.use(ElementUI);
 
+// 引入mockjs
+require('./mock.js')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
