@@ -14,6 +14,6 @@ let root = "http://114.215.130.190:8081";
  * 接口模版====get
  *
  * export const test = function(){return axios.get(`${root}/api/getNewsList`)}
- *
+ *  
  */
 export const cityList = function(){return axios.get("/cityList")}

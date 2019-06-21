@@ -1,37 +1,66 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from 'components/HelloWorld'
-import VuexTest from 'components/test/vuexTest'
-import Ele from 'views/ele' 
+import VuexTest from 'views/vuexTest/vuexTest'
+import EleTest from 'views/eleTest' 
+
+import home from 'views/home/home'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   redirect: '/home'
+    // },
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
-      meta: []
+      name: 'home',
+      component: home,
+      meta: { title:'首页',tags:[] },
+      // children: [
+      //   {
+      //     path: '/table',
+      //     component: home
+      //   }
+      // ]
     },
-    {
-      path: '/vuexTest',
-      name: 'VuexTest',
-      component: VuexTest,
-      meta: ['vuexTest'],
-    },
-    {
-      path: '/ele',
-      name: 'ELe',
-      component:Ele,
-      meta: ['ele'],
-      children:[
-        {
-          path:'ele',
-          component:Ele,
-          meta: ['ele','ele'],
-        }
-      ]
-    }
+    // {
+    //   path: '/vuexTest',
+    //   name: 'VuexTest',
+    //   component: VuexTest,
+    //   meta: {
+    //     title:'vuex传值',
+    //     tags:['vuexTest']
+    //   }
+    // },
+    // {
+    //   path: '/eleTest',
+    //   name: 'ELe',
+    //   component:EleTest,
+    //   meta: {
+    //     title:'页面',
+    //     tags:['ele']
+    //   },
+    //   children:[
+    //     {
+    //       path:'/eleTest',
+    //       component:EleTest,
+    //       meta: {
+    //         title:'页面',
+    //         tags:['ele','ele']
+    //       },
+    //     }
+    //   ]
+    // }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
+})
+
+export default router

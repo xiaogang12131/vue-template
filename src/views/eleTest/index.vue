@@ -1,7 +1,6 @@
 <template>
   <div>
-      <head-top></head-top>
-      <div class="c-mt-1" v-for="(item,index) in elCascaders" :key="index">
+      <div class="el-mt-1" v-for="(item,index) in elCascaders" :key="index">
         <button v-if="index == '0'" type="button" @click="addElCascaders">加</button>
         <button v-if="index != '0'" type="button" @click="deleteElCascaders(index)">减</button>
         <el-cascader
@@ -12,14 +11,14 @@
           :props="props"
         ></el-cascader>
       </div>
-      <div class="c-mt-1"> 
+      <div class="el-mt-1"> 
         <el-date-picker
           v-model="dateValue"
           type="date"
           placeholder="选择日期">
         </el-date-picker>
       </div>
-      <div class="c-mt-1">
+      <div class="el-mt-1">
           <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
           <el-dialog
             title="提示"
@@ -41,11 +40,9 @@
 </template>
 
 <script>
-  import headTop from  'components/headTop' 
   import { cityList } from 'http/api'
   export default {
     components:{
-      headTop
     },
     data() {
       return {
@@ -104,6 +101,4 @@
 </script>
 
 <style lang="stylus" scoped>
-  .c-mt-1
-    margin-top:10px;
 </style>
